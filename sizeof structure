@@ -1,0 +1,42 @@
+without pragma :
+
+
+#include <stdio.h>
+struct student 
+{
+    
+    
+    
+    char name[10];
+    int num;
+    float marks;
+};
+
+int main()
+{
+    struct student s1;
+    printf("%ld",sizeof(s1));
+    
+    
+    
+    with pragma:
+    
+    #include <stdio.h>
+//#pragma pack(1)
+struct student 
+{
+    
+    
+    
+    char name[10];
+    int num;
+    float marks;
+};
+
+int main()
+{
+    struct student s1;
+    printf("%ld",sizeof(s1));
+    
+    
+    
