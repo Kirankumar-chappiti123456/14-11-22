@@ -1,0 +1,106 @@
+struct employee
+{
+  char name[10];
+  int id;
+  float salary;
+};
+
+int main() {
+  struct employee *ptr;
+  ptr=(struct employee *)malloc(sizeof(struct employee));
+// struct employee e;
+
+ strcpy(ptr->name,"hema");
+ ptr->id=45;
+ ptr->salary=4.5;
+ printf("%s %d %f",ptr->name,ptr->id,ptr->salary);
+ 
+  return 0;
+}
+
+
+
+
+
+
+self refferential struct :
+
+
+#include <stdio.h>
+
+struct node { // declartion of structure 
+    int data1;  // members1
+    char data2;/// member 2
+    struct node* link; //self referential structure it alway points to struct name 
+};
+
+int main()
+{
+    struct node ob1; // Node1
+
+    // Initialization
+    ob1.link = NULL;
+    ob1.data1 = 10;
+    ob1.data2 = 20;
+
+    struct node ob2; // Node2
+
+    // Initialization
+    ob2.link = NULL;
+    ob2.data1 = 30;
+    ob2.data2 = 40;
+
+    // Linking ob1 and ob2
+    ob2.link = &ob1;
+
+    // Accessing data members of ob2 using ob1
+    printf("%d", ob2.link->data1);
+    printf("\n%d", ob2.link->data2);
+    return 0;
+}
+
+size of  structure:
+
+#include <stdio.h>
+#pragma pack(1)
+struct student 
+{
+    
+    
+    
+    char name[10];
+    int num;
+    float marks;
+};
+
+int main()
+{
+    struct student s1;
+    printf("%ld",sizeof(s1));
+
+
+structure declaration :
+
+zombie process and orphan process:
+
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<unistd.h>
+#include<sys/types.h>
+int main() {
+   pid_t p;
+   p=fork();
+   if(p==0) // child
+   {
+       //sleep(2);
+       printf(" i am child process having pid:%d \n",getpid());
+       printf("my parent process  pid is:%d \n",getppid());
+   }
+   else // parent
+   {
+      // sleep(2);
+       printf(" i am parent  process having pid:%d\n",getpid());
+       printf("my child process  pid is:%d\n",p);
+       
+   }
+}
