@@ -1,0 +1,51 @@
+method 1:
+
+#include<stdio.h>
+struct employee
+{
+int age;
+char name[20];
+float salary;
+};
+int main()
+{
+struct employee s1={21,"kiran",25.350};
+printf("%d %s %f",s1.age,s1.name,s1.salary};
+}
+
+
+
+method 2:
+#include<stdio.h>
+struct employee
+{
+int age;
+char name[20];
+float salary;
+}s1={21,"kiran",25.350};
+int main()
+{
+
+printf("%d %s %f",s1.age,s1.name,s1.salary);
+}
+
+method 3:
+
+
+#include<stdio.h>
+struct employee
+{
+int age;
+char name[20];
+float salary;
+};//s1={21,"kiran",25.350};
+int main()
+{
+struct employee s1;
+strcpy(s1.name,"kiran");
+s1.age=22;
+s1.salary=25.67000;
+printf("%d %s %f",s1.age,s1.name,s1.salary);
+}
+
+
